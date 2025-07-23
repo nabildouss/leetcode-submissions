@@ -3,24 +3,9 @@ public class Solution {
          var n = height.Length;
         var res = 0;
         var prevInd = 0;
-
-        for(int i = 1; i < n; i++) {
-            if(height[i] >= height[prevInd]) {
-                prevInd = i;
-            }
-            else break;
-        }
-
         var lastInd = n - 1;
-        for(int i = n-2; i > 0; i--) {
-            if(height[i] >= height[lastInd]) {
-                lastInd = i;
-            }
-            else break;
-        }
-        
-        var k = prevInd + 1;
-        var j = lastInd -1;
+        var k = 1;
+        var j = n - 2;
 
         while(prevInd < lastInd) {
             if(height[k] >= height[prevInd]) {
