@@ -15,7 +15,6 @@ public class TimeMap {
     }
 
     private string Search(List<(int, string)> list, int target) {
-        Console.WriteLine(target);
         var n = list.Count;
         if (n == 0) return string.Empty;
         var min = 0;
