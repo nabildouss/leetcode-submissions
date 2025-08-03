@@ -12,22 +12,15 @@
  * }
  */
 public class Solution {
-    // public Dictionary<int, List<int>> d = new Dictionary<int, List<int>>();
     
     public IList<IList<int>> LevelOrder(TreeNode root) {
         IList<IList<int>> res = new List<IList<int>>();
         LevelOrder(root, 1, ref res);
-        // int i = 1;
-        // while(d.ContainsKey(i)) {
-        //     res.Add(d[i]);
-        //     i++;
-        // }
         return res;
     }
     public void LevelOrder(TreeNode root, int level, ref IList<IList<int>> res) {
         if (root == null) return;
         if (res.Count < level) res.Add(new List<int>());
-        // if (!d.ContainsKey(level)) d[level] = new List<int>();
         res[level - 1].Add(root.val);
         LevelOrder(root.left, level + 1, ref res);
         LevelOrder(root.right, level + 1, ref res);
