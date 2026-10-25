@@ -7,11 +7,8 @@ public class Solution {
             else dict[c] = 1;
         }
         foreach(var c in t) {
-            if(!dict.ContainsKey(c)) return false;
+            if(!dict.ContainsKey(c) || dict[c] <= 0) return false;
             dict[c]--;
-        }
-        foreach(var entry in dict) {
-            if (dict[entry.Key] != 0) return false;
         }
         return true;
 
